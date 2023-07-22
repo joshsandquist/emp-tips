@@ -1,5 +1,7 @@
 const { gql } = require('apollo-server-express')
 
+
+//defining gql models, inputs, queries and mutations
 const typeDefs = gql
 `type Employee {
     id: ID!
@@ -17,7 +19,7 @@ const typeDefs = gql
     id: ID!
     totalTips: Float!
     hourlyRate: Float!
-    weekStartDate: String!
+    tipDate: String!
     employeeTips: [EmployeeTip]!
   }
   
@@ -31,12 +33,8 @@ const typeDefs = gql
     hoursWorked: Float!
   }
   
-  
-  
   input ReportInput {
     totalTips: Float!
-    weekStartDate: String!
-    employees: [EmployeeInput]!
   }
   
   type Query {
