@@ -1,27 +1,25 @@
-import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ChakraProvider } from "@chakra-ui/react"
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Reports from './pages/Reports'
-import Employees from './pages/Employees'
+import Employees from './pages/Employees';
+import Reports from './pages/Reports';
 
 function App() {
   return (
-    <Router>
-      <div>
+    <ChakraProvider>
+      <Router>
         <Header />
-
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/reports" element={<Reports />} />
           <Route path="/employees" element={<Employees />} />
+          <Route path="/reports" element={<Reports />} />
         </Routes>
-
         <Footer />
-      </div>
-    </Router>
+      </Router>
+    </ChakraProvider>
   );
 }
 
