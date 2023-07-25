@@ -16,7 +16,7 @@ function Home() {
         {/* Hero Section */}
         <Box>
           <Heading as="h1"  size="2xl" textAlign="center" mb={2}>Welcome to the Employee Tip Calculator</Heading>
-          <Text fontSize="xl" m={4} textAlign="center">The perfect tool for managing your employee tips and generating reports easily.</Text>
+          <Text fontSize="xl" m={4} textAlign="center">The perfect tool for managing your employee tip pool and generating reports easily.</Text>
         </Box>
 
         {/* Features Section */}
@@ -24,15 +24,15 @@ function Home() {
           <Heading as="h2" size="xl" textDecoration="underline" my={4}>Features</Heading>
           <VStack align="start" spacing={2} mt={4}>
             <Box>
-              <Heading as="h3" size="lg" color="yellow.200">Efficient Tip Calculations</Heading>
-              <Text fontSize="lg" m={2}>Calculate tips for your employees quickly and accurately.</Text>
+              <Heading as="h3" size="lg" color="yellow.100">Efficient Tip Calculations</Heading>
+              <Text fontSize="lg" m={2}>Calculate pooled tips for your employees quickly and accurately.</Text>
             </Box>
             <Box>
-              <Heading as="h3" size="lg" color="yellow.200">Employee Management</Heading>
+              <Heading as="h3" size="lg" color="yellow.100">Employee Management</Heading>
               <Text fontSize="lg" m={2}>Manage your employees' records, ensuring their tip history is always up-to-date.</Text>
             </Box>
             <Box>
-              <Heading as="h3" size="lg" color="yellow.200">Reports</Heading>
+              <Heading as="h3" size="lg" color="yellow.100">Reports</Heading>
               <Text fontSize="lg" m={2}>Generate comprehensive reports for individual employees or the whole team.</Text>
             </Box>
           </VStack>
