@@ -21,8 +21,6 @@ function Header() {
           fontSize="lg" 
           _hover={{ borderBottomColor: "transparent" }} 
           transition="border-bottom-color 0.3s ease"
-          activeStyle={{ color: 'yellow.300' }}
-          exact
         >
           Home
         </ChakraLink>
@@ -33,7 +31,6 @@ function Header() {
           fontSize="lg" 
           _hover={{ borderBottomColor: "transparent" }} 
           transition="border-bottom-color 0.3s ease"
-          activeStyle={{ color: 'yellow.300' }}
         >
           Reports
         </ChakraLink>
@@ -44,7 +41,6 @@ function Header() {
           fontSize="lg" 
           _hover={{ borderBottomColor: "transparent" }} 
           transition="border-bottom-color 0.3s ease"
-          activeStyle={{ color: 'yellow.300' }}
         >
           Employees
         </ChakraLink>
