@@ -20,7 +20,7 @@ function Home() {
           <Heading as="h2" size="xl" textAlign="center" textDecoration= "underline" my={4}>Features</Heading>
           <VStack align="start" spacing={2} mt={4}>
             <Box>
-              <Heading as="h3" size="xl" color="yellow.100">Efficient Tip Calculations</Heading>
+              <Heading as="h3" size="lg" color="yellow.100">Efficient Tip Calculations</Heading>
               <Text fontSize="lg" my={2}>Easily calculate pooled tips for your employees quickly and accurately.</Text>
             </Box>
             <Box>
