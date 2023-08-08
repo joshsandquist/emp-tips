@@ -1,5 +1,5 @@
 import { Box, Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
-import { FaGithub } from 'react-icons/fa'; // this assumes you've installed react-icons
+import { FaGithub } from 'react-icons/fa';
 
 function Footer() {
   return (
