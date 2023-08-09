@@ -10,7 +10,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/c
 
 
 const link = new HttpLink({
-  uri: 'mongodb://127.0.0.1:27017/employee-tips'
+  uri: 'http://localhost:3001/graphql'
 });
 
 const client = new ApolloClient({
