@@ -41,7 +41,7 @@ function EmployeeList() {
 
   return (
     <VStack spacing={4} align="start" width="full">
-      <Heading as="h2" size="lg">Employees</Heading>
+      <Heading as="h2" size="lg">All Employees</Heading>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} width="full">
         {data.getEmployees.map((employee) => (
           <Box 

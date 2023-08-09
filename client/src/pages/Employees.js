@@ -6,8 +6,9 @@ import EmployeeList from '../components/EmployeeList';
 function Employees() {
   return (
     <Flex flexDirection={'column'}>
+    <Heading as="h1" size="xl" textAlign="center" p={4}>Employees</Heading>
     <Box p={8}>
-      <Heading as="h2" size="xl">Add New Employee</Heading>
+      <Heading as="h2" size="lg">Add New Employee</Heading>
       <NewEmployeeForm />
     </Box>
     <Box p={8}>

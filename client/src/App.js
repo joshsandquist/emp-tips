@@ -7,6 +7,15 @@ import Home from './pages/Home';
 import Employees from './pages/Employees';
 import Reports from './pages/Reports';
 import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client';
+import {  extendTheme } from "@chakra-ui/react";
+
+const theme = extendTheme({
+  fonts: {
+    body: "Futura, sans-serif",
+    heading: "Futura, sans-serif"
+  }
+});
+
 
 
 const link = new HttpLink({
@@ -22,7 +31,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Router>
           <Flex direction="column" minHeight="100vh">
             <Header />

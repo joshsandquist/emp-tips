@@ -1,3 +1,7 @@
 .active-link {
   color: black !important;
 }
+
+body {
+  color: red;
+}
