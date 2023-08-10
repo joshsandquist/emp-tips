@@ -1,10 +1,12 @@
 import React from 'react';
+import WeeklyReportForm from '../components/WeeklyReportForm';
+import { VStack } from '@chakra-ui/react';
 
 function Reports() {
   return (
-    <header>
-      <h2>This is the Reports Page</h2>
-    </header>
+    <VStack>
+      <WeeklyReportForm/>
+    </VStack>    
   );
 }
 
