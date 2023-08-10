@@ -38,18 +38,26 @@ function NewEmployeeForm() {
     setHours('');
   };
 
-  return (
-    <Box as="form" onSubmit={handleSubmit} mt={4}>
+  return  (
+    <Box 
+      as="form" 
+      onSubmit={handleSubmit} 
+      mt={4}
+      p={4}
+      borderWidth="1px"
+      borderRadius="lg"
+      boxShadow="md"
+    >
       <FormControl id="firstName" isRequired>
-        <FormLabel>First Name</FormLabel>
+        <FormLabel fontSize="lg">First Name</FormLabel>
         <Input value={firstName} onChange={e => setFirstName(e.target.value)} />
       </FormControl>
-      <FormControl id="lastName" isRequired mt={4}>
-        <FormLabel>Last Name</FormLabel>
+      <FormControl id="lastName" isRequired mt={4} >
+        <FormLabel fontSize="lg">Last Name</FormLabel>
         <Input value={lastName} onChange={e => setLastName(e.target.value)} />
       </FormControl>
       <FormControl id="hours" isRequired mt={4}>
-        <FormLabel>Weekly Hours</FormLabel>
+        <FormLabel fontSize="lg">Weekly Hours</FormLabel>
         <Input type="number" value={hours} onChange={e => setHours(e.target.value)} />
       </FormControl>
       <Button type="submit" colorScheme="blue" mt={4}>
