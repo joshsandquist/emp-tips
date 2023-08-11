@@ -9,6 +9,7 @@ import Reports from './pages/Reports';
 import PastReports from './pages/PastReports';
 import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client';
 import {  extendTheme } from "@chakra-ui/react";
+import ReportDetail from './components/ReportDetail';
 
 const theme = extendTheme({
   fonts: {
@@ -43,6 +44,8 @@ function App() {
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/pastreports"
                 element={<PastReports />} />
+                <Route path="/reportdetail/:id"
+                element={<ReportDetail />} />
               </Routes>
             </Box>
             <Footer />
