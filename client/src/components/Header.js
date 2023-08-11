@@ -32,7 +32,17 @@ function Header() {
           _hover={{ borderBottomColor: "transparent" }} 
           transition="border-bottom-color 0.3s ease"
         >
-          Reports
+         New Report
+        </ChakraLink>
+        <ChakraLink 
+          as={NavLink} 
+          to="/pastreports" 
+          borderBottom="2px solid white" 
+          fontSize="lg" 
+          _hover={{ borderBottomColor: "transparent" }} 
+          transition="border-bottom-color 0.3s ease"
+        >
+         Past Reports
         </ChakraLink>
         <ChakraLink 
           as={NavLink} 

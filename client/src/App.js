@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Employees from './pages/Employees';
 import Reports from './pages/Reports';
+import PastReports from './pages/PastReports';
 import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client';
 import {  extendTheme } from "@chakra-ui/react";
 
@@ -40,6 +41,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/reports" element={<Reports />} />
+                <Route path="/pastreports"
+                element={<PastReports />} />
               </Routes>
             </Box>
             <Footer />
