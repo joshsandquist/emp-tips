@@ -11,6 +11,10 @@ const EmployeeTipSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  hoursWorked: {
+    type: Number,
+    required: true,
+  },
 });
 
 const ReportSchema = new mongoose.Schema({

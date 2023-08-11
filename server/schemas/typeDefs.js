@@ -13,6 +13,7 @@ const typeDefs = gql
   type EmployeeTip {
     employee: Employee!
     tipAmount: Float!
+    hoursWorked: Float
   }
   
   type Report {
