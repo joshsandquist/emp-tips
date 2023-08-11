@@ -68,7 +68,7 @@ function WeeklyReportForm() {
   if (error) return <Text>Error: {error.message}</Text>;
 
   return (
-    <VStack as="form" onSubmit={handleSubmit} spacing={4} align="start">
+    <VStack as="form" onSubmit={handleSubmit} spacing={4} p={8} align="start">
       <Heading as="h2" size="lg">Weekly Report</Heading>
 
       {data.getEmployees.map(employee => (
