@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
-import { Box, Text, VStack, Heading, Button, SimpleGrid } from '@chakra-ui/react';
+import { Box, Text, VStack, Heading, Button, SimpleGrid} from '@chakra-ui/react';
 
 const GET_EMPLOYEES = gql`
   query GetEmployees {
@@ -52,13 +52,18 @@ function EmployeeList() {
             bg="white"
             boxShadow="md"
           >
-            <Text fontSize="lg" fontWeight="bold">
+            <Text fontSize="2xl" my={4}fontWeight="bold" textAlign="center"> 
               {employee.firstName} {employee.lastName}
             </Text>
-            <Text mt={2}>Hours Worked: {employee.hoursWorked}</Text>
-            <Button mt={2} colorScheme="red" size="sm" onClick={() => handleDelete(employee.id)}>
+            <Box display="flex" justifyContent="center">
+            <Button my={2} colorScheme="purple" size="sm" >
+              About
+            </Button>
+            <Button my={2} ml={6}colorScheme="red" size="sm" onClick={() => handleDelete(employee.id)}>
               Delete
             </Button>
+            </Box>
+            
           </Box>
         ))}
       </SimpleGrid>

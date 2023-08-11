@@ -47,6 +47,7 @@ function NewEmployeeForm() {
       borderWidth="1px"
       borderRadius="lg"
       boxShadow="md"
+      noValidate
     >
       <FormControl id="firstName" isRequired>
         <FormLabel fontSize="lg">First Name</FormLabel>
@@ -58,7 +59,7 @@ function NewEmployeeForm() {
       </FormControl>
       <FormControl id="hours" isRequired mt={4}>
         <FormLabel fontSize="lg">Weekly Hours</FormLabel>
-        <Input type="number" value={hours} onChange={e => setHours(e.target.value)} />
+        <Input type="text" value={hours} onChange={e => setHours(e.target.value)}/>
       </FormControl>
       <Button type="submit" colorScheme="blue" mt={4}>
         Add Employee

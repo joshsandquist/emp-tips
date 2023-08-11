@@ -11,3 +11,5 @@ function Reports() {
 }
 
 export default Reports;
+
+//Need to make sure that deleted employees are not removed from the system causing previous report errors.
