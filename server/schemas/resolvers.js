@@ -63,9 +63,10 @@ const resolvers = {
         const hourlyRate = calculateHourlyRate(totalTips, hoursWorkedArray);
         // mapping over the employees to gather their hoursWorked, and then multiplying that by hourly rate
         const employeeTips = employees.map((employee) => ({
-          employee,
+          employee: employee._id,
           tipAmount: hourlyRate * employee.hoursWorked,
-        }));
+          hoursWorked: employee.hoursWorked
+      }));
     
         // Use current date for tipDate
         const tipDate = new Date().toISOString();

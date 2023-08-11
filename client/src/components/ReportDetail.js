@@ -53,14 +53,11 @@ function ReportDetail() {
           <Heading as="h3" size="md" mb={4} textAlign="center">Employees</Heading>
           <Divider mb={4}/>
           {report.employeeTips.map((employeeTip, idx) => (
-        <Box key={idx} textAlign="center" mb={2}>
-            <Text fontSize="lg">
-            {employeeTip.employee.firstName} {employeeTip.employee.lastName}
+            <Text key={idx} fontSize="lg" mb={2} textAlign="center">
+              {employeeTip.employee.firstName} {employeeTip.employee.lastName}: 
+              ${employeeTip.tipAmount.toFixed(2)} for {employeeTip.hoursWorked} hours.
             </Text>
-            <Text fontSize="md">Tips: ${employeeTip.tipAmount.toFixed(2)}</Text>
-            <Text fontSize="md">Hours Worked: {employeeTip.hoursWorked}</Text>
-        </Box>
-))}
+          ))}
         </Box>
       </VStack>
     </Center>
