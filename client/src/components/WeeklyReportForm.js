@@ -36,6 +36,7 @@ function WeeklyReportForm() {
   const [createReport] = useMutation(CREATE_REPORT);
   const [totalTips, setTotalTips] = useState(0);
   const [employeeHours, setEmployeeHours] = useState({});
+  const [errorMessage, setErrorMessage] = useState(''); 
 
   const handleHoursChange = (id, hours) => {
     setEmployeeHours(prev => ({ ...prev, [id]: hours }));
@@ -43,6 +44,14 @@ function WeeklyReportForm() {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    setErrorMessage('');
+    // Error handling to ensure user fills out all fields
+    
+    if (totalTips === 0 || Object.keys(employeeHours).length !== data.getEmployees.length) {
+      setErrorMessage('Please fill in all the fields.');
+      return;
+    }
+
     for (const id in employeeHours) {
       await updateEmployeeHours({
         variables: {
@@ -53,6 +62,7 @@ function WeeklyReportForm() {
         }
       });
     }
+
     await createReport({
       variables: {
         input: {
@@ -70,6 +80,8 @@ function WeeklyReportForm() {
   return (
     <VStack as="form" onSubmit={handleSubmit} spacing={4} p={8} align="start">
       <Heading as="h2" size="lg">Weekly Report</Heading>
+
+      {errorMessage && <Text color="red.500">{errorMessage}</Text>}
 
       {data.getEmployees.map(employee => (
         <Box key={employee.id}>
