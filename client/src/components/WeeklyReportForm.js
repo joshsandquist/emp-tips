@@ -107,6 +107,7 @@ function WeeklyReportForm() {
               <Text>{employee.firstName} {employee.lastName}</Text>
               <Input 
                 type="number"
+                step="0.01"
                 placeholder="Hours Worked"
                 onChange={e => handleHoursChange(employee.id, e.target.value)}
               />
