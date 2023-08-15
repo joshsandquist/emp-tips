@@ -18,12 +18,12 @@ function PastReports() {
   if (error) return <Text>Error: {error.message}</Text>;
 
   return (
-    <VStack spacing={4} align="start">
-      <Heading as="h2" size="lg"  pt={8}>Past Reports</Heading>
+    <VStack spacing={4} align="center">
+      <Heading as="h2" size="xl"  pt={8}>Past Reports</Heading>
       {data.getReports.map(report => {
         const displayDate = new Date(Number(report.tipDate)).toLocaleDateString();
         return (
-          <Link as={RouterLink} key={report.id} to={`/reportdetail/${report.id}`}>
+          <Link as={RouterLink} key={report.id} to={`/reportdetail/${report.id}`} pb={2}>
             {displayDate}
           </Link>
         );
