@@ -19,7 +19,7 @@ function PastReports() {
 
   return (
     <VStack spacing={4} align="center">
-      <Heading as="h2" size="xl"  pt={8}>Past Reports</Heading>
+      <Heading as="h2" size="lg"  pt={8}>Past Reports</Heading>
       {data.getReports.map(report => {
         const displayDate = new Date(Number(report.tipDate)).toLocaleDateString();
         return (

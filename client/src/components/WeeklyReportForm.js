@@ -93,7 +93,7 @@ function WeeklyReportForm() {
       
       {success ? (
         <Box>
-          <Text color="green.500">
+          <Text color="green.500" align="center">
             Report successfully generated! Navigate to the reports page to view the report.
           </Text>
           <Button onClick={resetForm} colorScheme="teal" m={2}>
@@ -104,7 +104,7 @@ function WeeklyReportForm() {
         <VStack as="form" onSubmit={handleSubmit} spacing={4} align="start">
           {data.getEmployees.map(employee => (
             <Box key={employee.id}>
-              <Text>{employee.firstName} {employee.lastName}</Text>
+              <Text fontSize= "lg">{employee.firstName} {employee.lastName}</Text>
               <Input 
                 type="number"
                 step="0.01"
@@ -114,7 +114,7 @@ function WeeklyReportForm() {
             </Box>
           ))}
           <Box>
-            <Text>Total Tips:</Text>
+            <Text fontSize="lg">Total Tips:</Text>
             <Input type="number" value={totalTips} onChange={e => setTotalTips(e.target.value)} />
           </Box>
           <Button type="submit" colorScheme="blue">Generate Report</Button>
