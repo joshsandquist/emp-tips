@@ -9,7 +9,6 @@ const ADD_EMPLOYEE = gql`
       id
       firstName
       lastName
-      hoursWorked
     }
   }
 `;
@@ -18,7 +17,7 @@ function NewEmployeeForm() {
   const [addEmployee] = useMutation(ADD_EMPLOYEE);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [hours, setHours] = useState('');
+
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -28,14 +27,12 @@ function NewEmployeeForm() {
         input: {
           firstName,
           lastName,
-          hoursWorked: parseFloat(hours),
         },
       },
     });
 
     setFirstName('');
     setLastName('');
-    setHours('');
   };
 
   return  (
@@ -56,10 +53,6 @@ function NewEmployeeForm() {
       <FormControl id="lastName" isRequired mt={4} >
         <FormLabel fontSize="lg">Last Name</FormLabel>
         <Input value={lastName} onChange={e => setLastName(e.target.value)} />
-      </FormControl>
-      <FormControl id="hours" isRequired mt={4}>
-        <FormLabel fontSize="lg">Weekly Hours</FormLabel>
-        <Input type="text" value={hours} onChange={e => setHours(e.target.value)}/>
       </FormControl>
       <Button type="submit" colorScheme="blue" mt={4}>
         Add Employee

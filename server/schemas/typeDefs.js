@@ -27,7 +27,7 @@ const typeDefs = gql
   input EmployeeInput {
     firstName: String!
     lastName: String!
-    hoursWorked: Float!
+    hoursWorked: Float
   }
 
   input UpdateHoursInput {
