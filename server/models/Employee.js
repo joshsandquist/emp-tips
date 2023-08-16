@@ -13,6 +13,9 @@ const EmployeeSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  position: {
+    type: String,
+  },
   isActive: {
     type: Boolean,
     default: true
