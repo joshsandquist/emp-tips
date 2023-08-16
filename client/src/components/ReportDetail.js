@@ -49,7 +49,7 @@ function ReportDetail() {
           </VStack>
         </Box>
         
-        <Box p={4} width="full" borderWidth="2px" borderRadius="md" mt={4} boxShadow="md">
+        <Box p={4} width="full" borderWidth="2px" borderRadius="md" mt={4} mb={8} boxShadow="md">
           <Heading as="h3" size="md" mb={4} textAlign="center">Employees</Heading>
           <Divider mb={4}/>
           {report.employeeTips.map((employeeTip, idx) => (
