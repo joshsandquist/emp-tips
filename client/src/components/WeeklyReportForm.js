@@ -2,9 +2,9 @@ import { useQuery, useMutation, gql } from '@apollo/client';
 import { VStack, Heading, Box, Text, Input, Button } from '@chakra-ui/react';
 import { useState } from 'react';
 
-const GET_EMPLOYEES = gql`
-  query GetEmployees {
-    getEmployees {
+const GET_ACTIVE_EMPLOYEES = gql`
+  query GetActiveEmployees {
+    getActiveEmployees {
       id
       firstName
       lastName
@@ -31,7 +31,7 @@ const CREATE_REPORT = gql`
 `;
 
 function WeeklyReportForm() {
-  const { loading, error, data } = useQuery(GET_EMPLOYEES);
+  const { loading, error, data } = useQuery(GET_ACTIVE_EMPLOYEES);
   const [updateEmployeeHours] = useMutation(UPDATE_HOURS);
   const [createReport] = useMutation(CREATE_REPORT);
   const [totalTips, setTotalTips] = useState(0);
@@ -48,7 +48,7 @@ function WeeklyReportForm() {
     setErrorMessage('');
     setSuccess(false);
 
-    if (totalTips === 0 || Object.keys(employeeHours).length !== data.getEmployees.length) {
+    if (totalTips === 0 || Object.keys(employeeHours).length !== data.getActiveEmployees.length) {
       setErrorMessage('Please fill in all the fields.');
       return;
     }
@@ -88,7 +88,7 @@ function WeeklyReportForm() {
   return (
     <VStack spacing={4} p={8} align="start">
       <Heading as="h2" size="lg">Weekly Report</Heading>
-
+  
       {errorMessage && <Text color="red.500">{errorMessage}</Text>}
       
       {success ? (
@@ -102,9 +102,9 @@ function WeeklyReportForm() {
         </Box>
       ) : (
         <VStack as="form" onSubmit={handleSubmit} spacing={4} align="start">
-          {data.getEmployees.map(employee => (
+          {data.getActiveEmployees.map(employee => (
             <Box key={employee.id}>
-              <Text fontSize= "lg">{employee.firstName} {employee.lastName}</Text>
+              <Text fontSize="lg">{employee.firstName} {employee.lastName}</Text>
               <Input 
                 type="number"
                 step="0.01"
@@ -115,7 +115,11 @@ function WeeklyReportForm() {
           ))}
           <Box>
             <Text fontSize="lg">Total Tips:</Text>
-            <Input type="number" value={totalTips} onChange={e => setTotalTips(e.target.value)} />
+            <Input 
+              type="number" 
+              value={totalTips} 
+              onChange={e => setTotalTips(e.target.value)} 
+            />
           </Box>
           <Button type="submit" colorScheme="blue">Generate Report</Button>
         </VStack>
