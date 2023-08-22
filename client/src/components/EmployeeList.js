@@ -1,10 +1,10 @@
 import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
-import { Box, Text, VStack, Heading, Button, SimpleGrid} from '@chakra-ui/react';
+import { Box, Text, VStack, Heading, Button, SimpleGrid } from '@chakra-ui/react';
 
-const GET_EMPLOYEES = gql`
-  query GetEmployees {
-    getEmployees {
+const GET_ACTIVE_EMPLOYEES = gql`
+  query GetActiveEmployees {
+    getActiveEmployees {
       id
       firstName
       lastName
@@ -22,7 +22,7 @@ const DELETE_EMPLOYEE = gql`
 `;
 
 function EmployeeList() {
-  const { loading, error, data, refetch } = useQuery(GET_EMPLOYEES);
+  const { loading, error, data, refetch } = useQuery(GET_ACTIVE_EMPLOYEES);
   const [deleteEmployee] = useMutation(DELETE_EMPLOYEE);
 
   const handleDelete = async (id) => {
@@ -41,9 +41,9 @@ function EmployeeList() {
 
   return (
     <VStack spacing={4} align="start" width="full">
-      <Heading as="h2" size="lg">All Employees</Heading>
+      <Heading as="h2" size="lg">Active Employees</Heading>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} width="full">
-        {data.getEmployees.map((employee) => (
+        {data.getActiveEmployees.map((employee) => (
           <Box 
             key={employee.id} 
             borderWidth="1px" 
@@ -52,18 +52,17 @@ function EmployeeList() {
             bg="white"
             boxShadow="md"
           >
-            <Text fontSize="2xl" my={4}fontWeight="bold" textAlign="center"> 
+            <Text fontSize="2xl" my={4} fontWeight="bold" textAlign="center"> 
               {employee.firstName} {employee.lastName}
             </Text>
             <Box display="flex" justifyContent="center">
-            <Button my={2} colorScheme="purple" size="sm" >
-              About
-            </Button>
-            <Button my={2} ml={6}colorScheme="red" size="sm" onClick={() => handleDelete(employee.id)}>
-              Delete
-            </Button>
+              <Button my={2} colorScheme="purple" size="sm">
+                About
+              </Button>
+              <Button my={2} ml={6} colorScheme="red" size="sm" onClick={() => handleDelete(employee.id)}>
+                Delete
+              </Button>
             </Box>
-            
           </Box>
         ))}
       </SimpleGrid>
