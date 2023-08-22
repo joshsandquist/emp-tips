@@ -42,6 +42,7 @@ const typeDefs = gql
   type Query {
     getEmployee(id: ID!): Employee
     getEmployees: [Employee]!
+    getActiveEmployees: [Employee]!
     getReport(id: ID!): Report
     getReports: [Report]!
   }

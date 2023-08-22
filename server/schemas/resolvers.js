@@ -19,6 +19,10 @@ const resolvers = {
     getEmployees: async () => {
       return await Employee.find({});
     },
+    getActiveEmployees: async () => {
+      return await Employee.find({ isActive: true });
+    },
+  
     //Populating reports with employee data
     getReport: async (_, { id }) => {
       return await Report.findById(id).populate('employeeTips.employee');
@@ -37,11 +41,7 @@ const resolvers = {
     },
     // deleting employee from db by id
     deleteEmployee: async (_, { id }) => {
-      const employeeToDelete = await Employee.findById(id);
-      if (employeeToDelete) {
-        await Employee.deleteOne({ _id: id });
-      }
-      return employeeToDelete;
+      return await Employee.findByIdAndUpdate(id, { isActive: false }, { new: true });
     },
 
     // mutation to update employee's hours worked
