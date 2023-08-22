@@ -56,7 +56,7 @@ const resolvers = {
         // only needs totalTips for the week as an input as employees will have their weekly hours attatched to them
         const { totalTips } = input;
         // Retrieve all employees from the database to get hours worked
-        const employees = await Employee.find({});
+        const employees = await Employee.find({ isActive: true });
         // Iterating through the employees and added each hoursWorked value to a new array
         const hoursWorkedArray = employees.map((employee) => employee.hoursWorked);
         // Calling rate calculator function with this new array and totalTips to recieve an hourly rate
