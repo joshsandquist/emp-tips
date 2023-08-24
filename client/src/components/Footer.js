@@ -12,7 +12,7 @@ function Footer() {
       justifyContent={{ base: "center"}}
       flexDirection={{ base: "row"}}
     >
-      <Text fontSize="xl" p={2} fontWeight="bold">Josh Sandquist © 2023</Text>
+      <Text fontSize="xl" p={2} fontWeight="bold">Josh Sandquist  2023</Text>
       <ChakraLink href="https://github.com/joshsandquist/emp-tips" isExternal>
         <FaGithub size="28px" />
       </ChakraLink>
