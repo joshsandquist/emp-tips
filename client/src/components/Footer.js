@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
+import { Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 import { FaGithub } from 'react-icons/fa';
 
 function Footer() {

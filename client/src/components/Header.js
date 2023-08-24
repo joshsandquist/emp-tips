@@ -12,7 +12,7 @@ function Header() {
       justifyContent={{ base: "center", md: "space-between" }} 
       flexDirection={{ base: "column", md: "row" }}
     >
-      <Heading as="h1" size="xl" p={2} fontWeight="bold">Employee Tip Calculator</Heading>
+      <Heading as="h1" size="xl" p={2} fontWeight="bold">Tip Calculator</Heading>
       <Box as="nav" display="flex" gap={8} p={2} >
         <ChakraLink 
           as={NavLink} 
