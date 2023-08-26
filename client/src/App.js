@@ -10,7 +10,7 @@ import PastReports from './pages/PastReports';
 import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client';
 import {  extendTheme } from "@chakra-ui/react";
 import ReportDetail from './components/ReportDetail';
-
+import EmployeeDetail from './components/EmployeeDetail';
 const theme = extendTheme({
   fonts: {
     body: "Futura, sans-serif",
@@ -44,6 +44,7 @@ function App() {
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/pastreports"
                 element={<PastReports />} />
+                <Route path="/employee/:id" render={(props) => <EmployeeDetail id={props.match.params.id} />} />
                 <Route path="/reportdetail/:id"
                 element={<ReportDetail />} />
               </Routes>
