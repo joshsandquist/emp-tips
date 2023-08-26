@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
 import { Box, Text, VStack, Heading, Button, SimpleGrid } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const GET_ACTIVE_EMPLOYEES = gql`
   query GetActiveEmployees {
@@ -56,9 +57,9 @@ function EmployeeList() {
               {employee.firstName} {employee.lastName}
             </Text>
             <Box display="flex" justifyContent="center">
-              <Button my={2} colorScheme="purple" size="sm">
-                About
-              </Button>
+            <Link to={`/employee/${employee.id}`}>
+              <Button my={2} colorScheme="purple" size="sm">About</Button>
+            </Link>
               <Button my={2} ml={6} colorScheme="red" size="sm" onClick={() => handleDelete(employee.id)}>
                 Delete
               </Button>
