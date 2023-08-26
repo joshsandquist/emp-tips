@@ -44,7 +44,7 @@ function App() {
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/pastreports"
                 element={<PastReports />} />
-                <Route path="/employee/:id" render={(props) => <EmployeeDetail id={props.match.params.id} />} />
+                <Route path="/employee/:id" element={<EmployeeDetail />} />
                 <Route path="/reportdetail/:id"
                 element={<ReportDetail />} />
               </Routes>
