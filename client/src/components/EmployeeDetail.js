@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 
 const GET_EMPLOYEE = gql`
 query GetEmployee($id: ID!) {
