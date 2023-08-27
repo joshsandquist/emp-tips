@@ -8,6 +8,8 @@ const typeDefs = gql
     firstName: String!
     lastName: String!
     hoursWorked: Float
+    isActive: Boolean!
+    reports: [Report] 
   }
   
   type EmployeeTip {

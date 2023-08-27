@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
-const GET_EMPLOYEE_BY_ID = gql`
-  query GetEmployeeById($id: ID!) {
+const GET_EMPLOYEE = gql`
+  query GetEmployee($id: ID!) {
     getEmployee(id: $id) {
       id
       firstName
@@ -16,7 +16,7 @@ const GET_EMPLOYEE_BY_ID = gql`
 `;
 
 function EmployeeDetail({ id }) {
-  const { loading, error, data } = useQuery(GET_EMPLOYEE_BY_ID, {
+  const { loading, error, data } = useQuery(GET_EMPLOYEE, {
     variables: { id }
   });
 
