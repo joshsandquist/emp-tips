@@ -17,7 +17,8 @@ query GetEmployee($id: ID!) {
   }
 }`
 
-function EmployeeDetail({ id }) {
+function EmployeeDetail() {
+  const { id } = useParams();
   const { loading, error, data } = useQuery(GET_EMPLOYEE, {
     variables: { id }
   });
